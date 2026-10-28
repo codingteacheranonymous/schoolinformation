@@ -1,4 +1,8 @@
-### 🎨 Premium Luxury style.css
+
+
+
+
+### 🎨 style.css
 ```css
 /* --- Core Variables & Luxury Brand Styling --- */
 :root {
@@ -22,7 +26,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Instant luxurious slide teleport animation */
+    scroll-behavior: smooth; /* Instant smooth teleport animation down pages */
     background-color: var(--alabaster);
     color: var(--deep-onyx);
     font-family: var(--font-body);
@@ -220,19 +224,28 @@ body {
 .logo-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
+    gap: 20px;
     align-items: center;
 }
 
 .logo-card {
     background-color: var(--alabaster);
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #f0ede9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90px;
     transition: all 0.4s ease;
+}
+
+.logo-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-card img {
@@ -259,6 +272,7 @@ body {
 .matrix-section {
     padding: 100px 8%;
     background-color: var(--alabaster);
+    scroll-margin-top: 90px;
 }
 
 .section-header {
@@ -321,7 +335,6 @@ tr:hover td {
     background-color: rgba(197, 168, 128, 0.02);
 }
 
-/* Luxury Teleport Link System */
 .table-link {
     color: var(--deep-onyx);
     text-decoration: none;
@@ -342,6 +355,7 @@ tr:hover td {
     border: 1px solid #eae6e1;
     padding: 6px 14px;
     border-radius: 2px;
+    white-space: nowrap;
 }
 
 .price-tag.free {
@@ -355,6 +369,7 @@ tr:hover td {
     padding: 100px 8%;
     background-color: var(--pure-white);
     border-top: 1px solid #eae6e1;
+    scroll-margin-top: 90px;
 }
 
 .profiles-grid {
@@ -373,7 +388,8 @@ tr:hover td {
     border-right: 1px solid #f0ede9;
     border-bottom: 1px solid #f0ede9;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    scroll-margin-top: 130px; /* Perfect offset window buffer when teleporting */
+    /* This window offset handles the fixed navy bar block during teleport linking */
+    scroll-margin-top: 140px; 
 }
 
 .profile-card:hover {
@@ -399,14 +415,18 @@ tr:hover td {
 }
 
 /* --- Responsive Adaptations --- */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+    .logo-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 900px) {
     .logo-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
     .navbar { padding: 20px 5%; }
     .nav-links { display: none; }
-    .slide-content h1 { font-size: 38px; }
+    .slide-content h1 { font-size: 36px; }
     .logo-grid { grid-template-columns: repeat(2, 1fr); }
     .profile-card { padding: 30px; }
 }
